@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Techy_Lab_C.MainPage"
+             BackgroundColor="{StaticResource PageBackground}">
+
+    <Grid>
+
+        <!-- Full Screen Image -->
+        <Image x:Name="QuestionImage"
+               Aspect="AspectFill"
+               VerticalOptions="Fill"
+               HorizontalOptions="Fill" />
+
+        <!-- Swipe Overlay (flashes green or red) -->
+        <BoxView x:Name="SwipeOverlay"
+                 Opacity="0"
+                 VerticalOptions="Fill"
+                 HorizontalOptions="Fill" />
+
+        <!-- Swipe Indicator Labels -->
+        <Label x:Name="TrueIndicator"
+               Text="TRUE"
+               FontSize="48"
+               FontAttributes="Bold"
+               TextColor="{StaticResource TrueColor}"
+               HorizontalOptions="Start"
+               VerticalOptions="Start"
+               Margin="30,60"
+               Opacity="0" />
+
+        <Label x:Name="FalseIndicator"
+               Text="FALSE"
+               FontSize="48"
+               FontAttributes="Bold"
+               TextColor="{StaticResource FalseColor}"
+               HorizontalOptions="End"
+               VerticalOptions="Start"
+               Margin="30,60"
+               Opacity="0" />
+
+        <!-- Question Bar at Bottom -->
+        <Border VerticalOptions="End"
+                BackgroundColor="{StaticResource QuestionBarBackground}"
+                Padding="24,20"
+                StrokeThickness="0">
+            <VerticalStackLayout Spacing="8">
+
+                <Label x:Name="QuestionNumberLabel"
+                       Text="Question 1 of 10"
+                       FontSize="12"
+                       TextColor="{StaticResource SecondaryText}"
+                       HorizontalTextAlignment="Center" />
+
+                <Label x:Name="QuestionLabel"
+                       FontSize="20"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource PrimaryText}"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap" />
+
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center"
+                             Spacing="16"
+                             Margin="0,8,0,0">
+                    <Label Text="← FALSE"
+                           FontSize="13"
+                           TextColor="{StaticResource FalseColor}" />
+                    <Label Text="TRUE →"
+                           FontSize="13"
+                           TextColor="{StaticResource TrueColor}" />
+                </StackLayout>
+
+            </VerticalStackLayout>
+        </Border>
+
+        <!-- Result overlay -->
+        <Border x:Name="ResultOverlay"
+                IsVisible="False"
+                BackgroundColor="{StaticResource PageBackground}"
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill"
+                StrokeThickness="0">
+            <VerticalStackLayout Spacing="24"
+                                 VerticalOptions="Center"
+                                 Padding="40">
+
+                <Label Text="Your Result!"
+                       FontSize="16"
+                       TextColor="{StaticResource SecondaryText}"
+                       HorizontalTextAlignment="Center" />
+
+                <Image x:Name="ResultImage"
+                       HeightRequest="200"
+                       Aspect="AspectFit" />
+
+                <Label x:Name="ResultLabel"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="{StaticResource PrimaryText}"
+                       HorizontalTextAlignment="Center" />
+
+                <Label x:Name="ResultDescription"
+                       FontSize="16"
+                       TextColor="{StaticResource SecondaryText}"
+                       HorizontalTextAlignment="Center"
+                       LineBreakMode="WordWrap" />
+
+            </VerticalStackLayout>
+        </Border>
+
+    </Grid>
+
+</ContentPage>
